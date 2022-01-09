@@ -1,8 +1,11 @@
 import { getProviders, getSession, useSession } from 'next-auth/react';
 import Head from 'next/head'
+import Brands from '../components/Brands';
 import Header from '../components/Header'
+import Hero from '../components/Hero';
+import Slider from '../components/Slider';
 
-export default function Home({providers}) {
+export default function Home() {
 
   const { data:session } = useSession();
   
@@ -13,7 +16,15 @@ export default function Home({providers}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header providers = {providers} session={session}/>
+      <Header/>
+      {!session ? (
+        <Hero/>
+      ):(
+        <main>
+            <Slider/>
+            <Brands/>
+        </main>
+      )}
      
     </div>
   )
@@ -27,7 +38,6 @@ export async function getServerSideProps(context){
 
   return {
     props: {
-      providers,
       session,
     },
   };

@@ -5,20 +5,21 @@ import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from 'next/router';
 
 
-function Header({providers, session}) {
+function Header() {
 
-    // const { data:session } = useSession();
-    console.log("qqqq", session);
+    const { data:session } = useSession();
+    // console.log("qqqq", session);
     const router = useRouter();
    
 
     return (
-        <div className='sticky bg-[#040714] top-0 z-[1000] flex h-[68px] items-center px-9 md:px-12'>
+        <header className='sticky bg-[#040714] top-0 z-[1000] flex h-[68px] items-center px-9 md:px-12'>
             <Image
                 src='/images/logo.svg'
                 width={68}
                 height = {68}
-                className='cursor-pointer '
+                className='cursor-pointer'
+                onClick={()=> router.push("/")}
             />
 
             {session && (
@@ -66,7 +67,7 @@ function Header({providers, session}) {
             )}
                 
             
-        </div>
+        </header>
     )
 }
 
