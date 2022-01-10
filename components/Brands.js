@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-import { Carousel } from "react-responsive-carousel";
 
 export default function Brands() {
     return (
-        <section className="flex flex-col items-center justify-center gap-6 px-4 mx-auto mt-10 max-w-max md:flex-row">
+        <section className="flex flex-wrap items-center justify-center gap-6 px-6 mx-auto mt-10 max-w-max md:flex-row">
             <div className="brand group">
                 <Image src="/images/disnep.png" layout="fill" objectFit="cover" />
                 <video
@@ -13,7 +12,7 @@ export default function Brands() {
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
-                <source src="/videos/disney.mp4" type="video/mp4" />
+                    <source src="/videos/disney.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -25,7 +24,7 @@ export default function Brands() {
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
-                <source src="/videos/pixar.mp4" type="video/mp4" />
+                    <source src="/videos/pixar.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -37,7 +36,7 @@ export default function Brands() {
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
-                <source src="/videos/marvel.mp4" type="video/mp4" />
+                    <source src="/videos/marvel.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -49,7 +48,7 @@ export default function Brands() {
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
-                <source src="/videos/star-wars.mp4" type="video/mp4" />
+                    <source src="/videos/star-wars.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -65,9 +64,10 @@ export default function Brands() {
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
-                <source src="/videos/national-geographic.mp4" type="video/mp4" />
+                    <source src="/videos/national-geographic.mp4" type="video/mp4" />
                 </video>
             </div>
+        
         </section>
     )
 }
