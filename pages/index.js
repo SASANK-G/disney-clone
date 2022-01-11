@@ -6,16 +6,19 @@ import Hero from '../components/Hero';
 import MoviesCollection from '../components/MoviesCollection';
 import ShowsCollection from '../components/ShowsCollection';
 import Slider from '../components/Slider';
+import Trending from '../components/Trending';
 
 export default function Home({
   popularMovies,
   popularShows,
   top_ratedMovies,
   top_ratedShows,
+  trendingMS
 }) {
 
   const { data:session } = useSession();
-  
+  console.log("lkl", trendingMS);
+  console.log("lkhghg", top_ratedMovies);
   return (
     <div className="">
       <Head>
@@ -31,6 +34,7 @@ export default function Home({
             after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]'>
             <Slider/>
             <Brands/>
+            <Trending  results={trendingMS} title="Latest & Trending"/>
             <MoviesCollection results={popularMovies} title="Popular Movies" />
             <ShowsCollection results={popularShows} title="Popular Shows" />
             <MoviesCollection
@@ -52,11 +56,13 @@ export async function getServerSideProps(context){
   const providers = await getProviders();
   const session = await getSession(context);//server side rendering
 
+
   const [
     popularMoviesRes,
     popularShowsRes,
     top_ratedMoviesRes,
     top_ratedShowsRes,
+    trendingRes,
   ] = await Promise.all([
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`
@@ -70,13 +76,17 @@ export async function getServerSideProps(context){
     fetch(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
+    fetch(
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}&language=en-US&page=1`
+    ),
   ]);
-  const [popularMovies, popularShows, top_ratedMovies, top_ratedShows] =
+  const [popularMovies, popularShows, top_ratedMovies, top_ratedShows, trendingMS] =
     await Promise.all([
       popularMoviesRes.json(),
       popularShowsRes.json(),
       top_ratedMoviesRes.json(),
       top_ratedShowsRes.json(),
+      trendingRes.json(),
     ]);
 
   return {
@@ -86,6 +96,9 @@ export async function getServerSideProps(context){
       popularShows: popularShows.results,
       top_ratedMovies: top_ratedMovies.results,
       top_ratedShows: top_ratedShows.results,
+      trendingMS: trendingMS.results,
     },
   };
+  
+
 }

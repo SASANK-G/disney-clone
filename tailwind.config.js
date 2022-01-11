@@ -14,5 +14,7 @@ module.exports = {
       body: ["montserrat", "sans-serif"]
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

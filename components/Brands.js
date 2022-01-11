@@ -9,6 +9,7 @@ export default function Brands() {
                 <video
                 autoPlay
                 loop
+                muted
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
@@ -21,6 +22,7 @@ export default function Brands() {
                 <video
                 autoPlay
                 loop
+                muted
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
@@ -33,6 +35,7 @@ export default function Brands() {
                 <video
                 autoPlay
                 loop
+                muted
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
@@ -45,6 +48,7 @@ export default function Brands() {
                 <video
                 autoPlay
                 loop
+                muted
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
@@ -61,6 +65,7 @@ export default function Brands() {
                 <video
                 autoPlay
                 loop
+                muted
                 playsInline
                 className="hidden object-cover rounded-lg group-hover:inline"
                 >
