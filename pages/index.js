@@ -17,8 +17,8 @@ export default function Home({
 }) {
 
   const { data:session } = useSession();
-  console.log("lkl", trendingMS);
-  console.log("lkhghg", top_ratedMovies);
+  // console.log("lkl", trendingMS);
+  // console.log("lkhghg", top_ratedMovies);
   return (
     <div className="">
       <Head>

@@ -11,7 +11,7 @@ import ReactPlayer from "react-player/lazy";
 
 
 export default function Movie({result}) {
-    const { data:session } = useSession();
+  const { data:session } = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
   const [showPlayer, setShowPlayer] = useState(false);
@@ -37,7 +37,7 @@ export default function Movie({result}) {
         <Hero />
       ) : (
         <section className="relative z-50 ">
-          <div className="relative min-h-screen">
+          <div className="relative h-screen ">
             <Image
               src={
                 `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
@@ -45,6 +45,7 @@ export default function Movie({result}) {
               }
               layout="fill"
               objectFit="cover"
+              
             />
           </div>
           <div className="absolute z-50 space-y-6 inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12">

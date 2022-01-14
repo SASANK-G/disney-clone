@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export default function MovieThumbnail({result}) {
+export default function MovieThumbnail({ result }) {
 
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
