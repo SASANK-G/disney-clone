@@ -6,7 +6,7 @@ export default function MovieThumbnail({ result }) {
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
     const descrip = result.overview.split(' ').slice(0,15).join(' ');
-    // console.log("eeeee", descrip);
+    // console.log("eeeee", result);
 
     return (
         <div

@@ -24,14 +24,14 @@ function Hero() {
             height="150"
             objectFit="contain"
           />
-          <button className="bg-blue-600 uppercase text-xl tracking-wide font-extrabold py-4 px-6 w-full rounded hover:bg-[#0485ee]">
+          <button className="bg-blue-600 uppercase text-lg tracking-wide font-bold py-3 px-4 w-7/12 rounded hover:bg-[#0485ee]">
             Get all there
           </button>
-          <p className="text-xs text-center ">
+          {/* <p className="text-xs text-center ">
             Get Premier Access to Raya and the Last Dragon for an additional fee
             with a Disney+ subscription. As of 03/26/21, the price of Disney+
             and The Disney Bundle will increase by $
-          </p>
+          </p> */}
           <Image
             src="/images/cta-logo-two.png"
             width="600"

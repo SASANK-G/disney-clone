@@ -5,7 +5,7 @@ export default function ShowThumbnail({ result }) {
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
     const descrip = result.overview.split(' ').slice(0,15).join(' ');
-    // console.log("ddd", result);
+    // console.log("ddd", result.media_type);
     // console.log("sss", result.name);
     // console.log("fff", result.original_title);
     // console.log("ggg", result.original_name);

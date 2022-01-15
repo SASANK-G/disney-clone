@@ -18,7 +18,7 @@ export default function Home({
 
   const { data:session } = useSession();
   // console.log("lkl", trendingMS);
-  // console.log("lkhghg", top_ratedMovies);
+  // console.log("lkhghg", trendingRes);
   return (
     <div className="">
       <Head>
@@ -77,7 +77,7 @@ export async function getServerSideProps(context){
       `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
   ]);
   const [popularMovies, popularShows, top_ratedMovies, top_ratedShows, trendingMS] =
